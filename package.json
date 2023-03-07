@@ -1,6 +1,6 @@
 {
-    "name": "react-native-fast-image",
-    "version": "8.6.3",
+    "name": "rn-fast-image-p",
+    "version": "1.0.0",
     "description": "🚩 FastImage, performant React Native image component.",
     "keywords": [
         "cache",
@@ -34,7 +34,8 @@
         "build": "dv-scripts build && cp src/index.js.flow dist/index.js.flow && cp src/index.js.flow dist/index.cjs.js.flow",
         "lint": "dv-scripts lint",
         "release": "dv-scripts release",
-        "test": "dv-scripts test"
+        "test": "dv-scripts test",
+        "release-it": "release-it"
     },
     "prettier": {
         "semi": false,
@@ -73,10 +74,29 @@
         "react": "17.0.2",
         "react-native": "0.64.2",
         "react-test-renderer": "17.0.2",
-        "typescript": "^4.3.5"
+        "typescript": "^4.3.5",
+        "release-it": "^15.0.0",
+        "@release-it/conventional-changelog": "^5.0.0"
     },
     "peerDependencies": {
         "react": "^17 || ^18",
         "react-native": ">=0.60.0"
+    },
+    "release-it": {
+        "git": {
+            "commitMessage": "chore: release ${version}",
+            "tagName": "v${version}"
+        },
+        "npm": {
+            "publish": true
+        },
+        "github": {
+            "release": true
+        },
+        "plugins": {
+            "@release-it/conventional-changelog": {
+                "preset": "angular"
+            }
+        }
     }
 }
