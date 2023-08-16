@@ -3,7 +3,7 @@ require 'json'
 Pod::Spec.new do |s|
   package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
 
-  s.name          = "RNFastImagePris"
+  s.name          = "RNFastImage"
   s.version       = package['version']
   s.summary       = package['description']
   s.authors       = { "Dylan Vann" => "dylan@dylanvann.com" }
