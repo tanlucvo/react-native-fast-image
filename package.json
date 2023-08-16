@@ -1,102 +1,160 @@
 {
-    "name": "rn-fast-image-p",
-    "version": "1.0.2",
-    "description": "🚩 FastImage, performant React Native image component.",
-    "keywords": [
-        "cache",
-        "cached",
-        "fastimage",
-        "image",
-        "priority"
-    ],
-    "homepage": "https://github.com/DylanVann/react-native-fast-image#readme",
-    "bugs": {
-        "url": "https://github.com/DylanVann/react-native-fast-image/issues"
+  "name": "react-native-fast-image-pris",
+  "version": "0.1.1",
+  "description": "test",
+  "main": "lib/commonjs/index",
+  "module": "lib/module/index",
+  "types": "lib/typescript/index.d.ts",
+  "react-native": "src/index",
+  "source": "src/index",
+  "files": [
+    "src",
+    "lib",
+    "android",
+    "ios",
+    "cpp",
+    "*.podspec",
+    "!lib/typescript/example",
+    "!ios/build",
+    "!android/build",
+    "!android/gradle",
+    "!android/gradlew",
+    "!android/gradlew.bat",
+    "!android/local.properties",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "!**/.*"
+  ],
+  "scripts": {
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "prepack": "bob build",
+    "release": "release-it",
+    "example": "yarn --cwd example",
+    "bootstrap": "yarn example && yarn install && yarn example pods",
+    "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build"
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "android"
+  ],
+  "repository": "https://github.com/tanlucvo/react-native-fast-image-purple",
+  "author": "Tấn Lực Võ <57494001+tanlucvo@users.noreply.github.com> (https://github.com/tanlucvo)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tanlucvo/react-native-fast-image-purple/issues"
+  },
+  "homepage": "https://github.com/tanlucvo/react-native-fast-image-purple#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@evilmartians/lefthook": "^1.2.2",
+    "@commitlint/config-conventional": "^17.0.2",
+    "@react-native-community/eslint-config": "^3.0.2",
+    "@release-it/conventional-changelog": "^5.0.0",
+    "@types/jest": "^28.1.2",
+    "@types/react": "~17.0.21",
+    "@types/react-native": "0.70.0",
+    "commitlint": "^17.0.2",
+    "del-cli": "^5.0.0",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^28.1.1",
+    "pod-install": "^0.1.0",
+    "prettier": "^2.0.5",
+    "react": "18.2.0",
+    "react-native": "0.71.3",
+    "react-native-builder-bob": "^0.20.0",
+    "release-it": "^15.0.0",
+    "typescript": "^4.5.2"
+  },
+  "resolutions": {
+    "@types/react": "17.0.21"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "engines": {
+    "node": ">= 16.0.0"
+  },
+  "packageManager": "^yarn@1.22.15",
+  "jest": {
+    "preset": "react-native",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules",
+      "<rootDir>/lib/"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version}",
+      "tagName": "v${version}"
     },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/DylanVann/react-native-fast-image.git"
+    "npm": {
+      "publish": true
     },
-    "license": "(MIT AND Apache-2.0)",
-    "author": "Dylan Vann <dylan@dylanvann.com> (https://dylanvann.com)",
-    "main": "src/index.tsx",
-    "module": "src/index.tsx",
-    "typings": "src/index.tsx",
-    "files": [
-        "android",
-        "!android/build",
-        "ios",
-        "!ios/build",
-        "dist",
-        "RNFastImage.podspec"
-    ],
-    "scripts": {
-        "build": "dv-scripts build && cp src/index.js.flow dist/index.js.flow && cp src/index.js.flow dist/index.cjs.js.flow",
-        "lint": "dv-scripts lint",
-        "release": "dv-scripts release",
-        "test": "dv-scripts test",
-        "release-it": "release-it"
+    "github": {
+      "release": true
     },
-    "prettier": {
-        "semi": false,
-        "singleQuote": true,
-        "tabWidth": 4,
-        "trailingComma": "all"
-    },
-    "eslintConfig": {
-        "extends": "dv-scripts"
-    },
-    "jest": {
-        "coveragePathIgnorePatterns": [
-            "ReactNativeFastImageExample*",
-            "ReactNativeFastImageExampleServer*"
-        ],
-        "modulePathIgnorePatterns": [
-            "ReactNativeFastImageExample*",
-            "ReactNativeFastImageExampleServer*"
-        ],
-        "preset": "react-native"
-    },
-    "resolutions": {
-        "@jest/create-cache-key-function": "^27"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.14.6",
-        "@babel/runtime": "^7.14.6",
-        "@types/jest": "^26.0.24",
-        "@types/react": "^17.0.14",
-        "@types/react-native": "^0.69.5",
-        "@types/react-test-renderer": "^17.0.1",
-        "dv-scripts": "^1.6.0",
-        "eslint-config-dv-scripts": "^1.1.1",
-        "metro-react-native-babel-preset": "^0.66.1",
-        "prettier": "^2.3.2",
-        "react": "17.0.2",
-        "react-native": "0.64.2",
-        "react-test-renderer": "17.0.2",
-        "typescript": "^4.3.5",
-        "release-it": "^15.0.0",
-        "@release-it/conventional-changelog": "^5.0.0"
-    },
-    "peerDependencies": {
-        "react": "^17 || ^18",
-        "react-native": ">=0.60.0"
-    },
-    "release-it": {
-        "git": {
-            "commitMessage": "chore: release ${version}",
-            "tagName": "v${version}"
-        },
-        "npm": {
-            "publish": true
-        },
-        "github": {
-            "release": true
-        },
-        "plugins": {
-            "@release-it/conventional-changelog": {
-                "preset": "angular"
-            }
-        }
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular"
+      }
     }
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@react-native-community",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "quoteProps": "consistent",
+          "singleQuote": true,
+          "tabWidth": 2,
+          "trailingComma": "es5",
+          "useTabs": false
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ],
+  "prettier": {
+    "quoteProps": "consistent",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  }
 }
