@@ -98,5 +98,9 @@
                 "preset": "angular"
             }
         }
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org"
     }
 }
